@@ -1,39 +1,37 @@
+import React,{useState} from 'react'
 import './App.css';
-import React,{useState} from 'react';
-import TodoList from './TodoList';
+import Todolist from './Componets/Todolist/Todolist';
 
-function App() {
-  const [task, setTask] = useState("");
+
+const App = () => {
+  const [task,setTask] = useState("");
   const [todos,setTodos] = useState([]);
-  const changeHandler = e =>{
+
+  const onchangeHandler = e =>{
     setTask(e.target.value);
   }
-  const submitHandler = e =>{
+  const onsubmitHandler = e =>{
     e.preventDefault();
-    console.log(task)
     const newTodos = [...todos,task];
+    console.log(task);
     setTodos(newTodos);
     setTask("");
   }
-  const deleteHandler = (indexValue) =>{
-      const newTodos = todos.filter((todo,index) => index !== indexValue);
-      setTodos(newTodos);
+
+  const deletHandler = (indexValue) => {
+    const newTodos = todos.filter((todo,index) => index !== indexValue );
+    setTodos(newTodos);
   }
   return (
-    <div className="App">
-   
-     <h2>Todo list App</h2>
-     <div className='container'>
-     <form onSubmit={submitHandler}>
-      <div className='hero_content'>
-        <input type='text' name="search" placeholder=' Add todo here!' value={task}  onChange={changeHandler}/>
-        <button type='submit' name="Add" className='pluse_button'>+</button>
-      </div>
+    <section>
+    <h1>Todo list in React</h1>
+      <form className='fomrTodo' onSubmit={onsubmitHandler}>
+        <input type="text" value={task} placeholder='Enter the values' onChange={onchangeHandler} />
+        <input type='submit' value="+" />
       </form>
-     <TodoList todolist={todos} deleteHandler={deleteHandler}/>
-     </div>
-    </div>
-  );
+      <Todolist  todos={todos} deletHandler={deletHandler}/>
+    </section>
+  )
 }
 
-export default App;
+export default App

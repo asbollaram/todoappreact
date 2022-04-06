@@ -24,7 +24,7 @@ input[type=text]{
   box-sizing: border-box;
   font-size: 24px;
 }
-button[type=submit] {
+input[type=submit] {
   width: 50px;
   background-color: #fcd604;
   color: #333;
@@ -36,6 +36,6 @@ button[type=submit] {
   text-align: center;
   font-size: 28px;
 }
-button[type=submit]:hover {
+input[type=submit]:hover {
   background-color: #daba08;
 }

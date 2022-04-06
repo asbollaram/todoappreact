@@ -15,10 +15,10 @@ align-items: center;
 width: 96%;
 border: 1px solid #e1e1e1;
 }
-.todoContent h3{
+.todoContent h2{
     width: 99%;
 }
-.close{
+button{
     border:none;
     outline: 0;
     padding:5px 10px; 
