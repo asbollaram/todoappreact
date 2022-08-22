@@ -23,14 +23,17 @@ const App = () => {
     setTodos(newTodos);
   }
   return (
-    <section>
-    <h1>Todo list in React</h1>
-      <form className='fomrTodo' onSubmit={onsubmitHandler}>
-        <input type="text" value={task} placeholder='Enter the values' onChange={onchangeHandler} />
-        <input type='submit' value="+" />
-      </form>
-      <Todolist  todos={todos} deletHandler={deletHandler}/>
-    </section>
+    <div>
+      <div className="container">
+       <h1>Todo list in React</h1>
+        <form className='fomrTodo d-flex p-2 bd-highlight' onSubmit={onsubmitHandler}>
+          <input className='form-control' type="text" value={task} placeholder='Enter the values' onChange={onchangeHandler} />
+          <input type='submit' value="+" className='btn btn-warning p-4 m-2 btn-lg '/>
+        </form>
+       </div>
+        <Todolist  todos={todos} deletHandler={deletHandler}/>
+      
+    </div>
   )
 }
 
